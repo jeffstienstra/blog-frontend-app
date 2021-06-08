@@ -7,13 +7,13 @@
       </ul>
       <div>
         <label>Email:</label>
-        <input type="email" v-model="email" />
+        <input type="email" class="form-control" v-model="email" />
       </div>
       <div>
         <label>Password:</label>
-        <input type="password" v-model="password" />
+        <input type="password" class="form-control" v-model="password" />
       </div>
-      <input type="submit" value="Submit" />
+      <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
   </div>
 </template>
