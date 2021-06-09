@@ -70,6 +70,9 @@
       <router-link to="/about">About</router-link>
     </div>
     <div class="container">
+      <div v-on:click="flashMessage = null" v-if="flashMessage" class="alert alert-success" role="alert">
+        {{ flashMessage }}
+      </div>
       <router-view />
     </div>
   </div>
@@ -83,6 +86,11 @@ body {
 
 <script>
 export default {
+  data: function () {
+    return {
+      flashMessage: null,
+    };
+  },
   methods: {
     isLoggedIn: function () {
       return localStorage.getItem("jwt");
