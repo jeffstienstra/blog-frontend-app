@@ -9,6 +9,8 @@
       <div>
         <label>Body:</label>
         <input type="text" v-model="newPostParams.body" />
+        <!-- <br />
+        <small v-if="newPostParams.body.length > 0">{{ 250 - newPostParams.body.length }} characters remaining</small> -->
       </div>
       <div>
         <label>image:</label>

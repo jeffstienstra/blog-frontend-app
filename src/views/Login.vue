@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+    <img v-bind:src="`https://http.cat/${status}`" alt="" />
     <form v-on:submit.prevent="submit()">
       <h1>Login</h1>
       <ul>
@@ -27,6 +28,7 @@ export default {
       email: "",
       password: "",
       errors: [],
+      status: null,
     };
   },
   methods: {
@@ -47,6 +49,7 @@ export default {
           this.errors = ["Invalid email or password."];
           this.email = "";
           this.password = "";
+          this.status = error.response.status;
         });
     },
   },
