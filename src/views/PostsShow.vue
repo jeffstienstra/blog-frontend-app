@@ -2,9 +2,9 @@
   <div>
     <h1>One Post</h1>
     <img v-bind:src="post.image" alt="" style="width: 20%" />
-    <h2>{{ post.title }}</h2>
-    <h2>{{ post.body }}</h2>
-    <a v-bind:href="`/posts/${post.id}/edit`">Edit this post</a>
+    <h3>{{ post.title }}</h3>
+    <h5>{{ post.body }}</h5>
+    <a v-if="post.is_owner" v-bind:href="`/posts/${post.id}/edit`">Edit this post</a>
     <button v-if="post.is_owner" v-on:click="destroyPost()">Destroy post</button>
     <a href="/posts">Back to all posts</a>
     <br />

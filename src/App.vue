@@ -80,7 +80,7 @@
 
 <style>
 body {
-  background-image: url("./assets/sergei-akulich-subtle-horizon.jpg");
+  background-image: url("./assets/background.jpg");
 }
 </style>
 

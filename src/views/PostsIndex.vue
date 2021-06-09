@@ -8,17 +8,37 @@
         <option v-for="post in posts" v-bind:key="post.id">{{ post.title }}</option>
       </datalist>
     </div>
-    <div v-for="post in filterBy(posts, searchFilter, 'title')" v-bind:key="post.id">
-      <br />
-      <img v-bind:src="post.image" alt="" style="width: 20%" />
-      <h2>{{ post.title }}</h2>
-      <h2>{{ post.body }}</h2>
-      <a v-bind:href="`/posts/${post.id}`">More info</a>
-      <br />
-      <br />
+
+    <div
+      class="row"
+      is="transition-group"
+      appear
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
+    >
+      <div v-for="post in filterBy(posts, searchFilter, 'title')" v-bind:key="post.id">
+        <br />
+        <img v-bind:src="post.image" alt="" style="width: 20%" />
+        <h3>{{ post.title }}</h3>
+        <h5>{{ post.body }}</h5>
+        <a v-bind:href="`/posts/${post.id}`">More info</a>
+        <br />
+        <br />
+      </div>
     </div>
   </div>
 </template>
+
+<style>
+.card img {
+  object-fit: cover;
+  height: 300px;
+}
+.fadeOutLong {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+</style>
 
 <script>
 import axios from "axios";
